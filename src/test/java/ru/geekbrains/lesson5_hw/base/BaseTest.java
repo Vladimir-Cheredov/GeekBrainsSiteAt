@@ -1,11 +1,11 @@
 package ru.geekbrains.lesson5_hw.base;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
-import org.openqa.selenium.PageLoadStrategy;
+import org.junit.jupiter.api.AfterEach;
+import org.junit.jupiter.api.BeforeEach;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
-import org.openqa.selenium.remote.DesiredCapabilities;
 
 import java.util.Arrays;
 import java.util.concurrent.TimeUnit;
@@ -13,32 +13,20 @@ import java.util.concurrent.TimeUnit;
 public class BaseTest {
     protected WebDriver driver;
 
-    protected void setUpDriver() {
-        WebDriverManager.chromedriver().setup();
-        //System.setProperty("webdriver.chrome.driver", "src/test/resources/chromedriver.exe");
+    @BeforeEach
+    void setUp() {
+        System.setProperty("webdriver.chrome.driver", "src/test/resources/chromedriver");
 
         ChromeOptions options = new ChromeOptions();
-        options.setPageLoadStrategy(PageLoadStrategy.NONE);
-        //options.addArguments("start-maximized");
-        //options.addArguments("enable-automation");
-        //options.addArguments("--headless");
-        //options.addArguments("--no-sandbox");
-        options.addArguments("incognito");
-        options.addArguments("--disable-infobars");
-        options.addArguments("--disable-dev-shm-usage");
-        options.addArguments("--disable-browser-side-navigation");
-        options.addArguments("--disable-gpu");
         options.addArguments("--disable-popup-blocking");
-        options.setExperimentalOption("excludeSwitches", Arrays.asList("disable-popup-blocking"));
-
-        DesiredCapabilities capabilities = new DesiredCapabilities();
-        capabilities.setCapability(ChromeOptions.CAPABILITY, options);
-        driver = new ChromeDriver(options);
-
-        driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
+        options.setExperimentalOption("excludeSwitches", Arrays.asList("disable-popup-blocking"));// создаем опции для отключения всплывающих окон
+        driver = new ChromeDriver(options);//создаем экземпляр хромдрайвера и передаем в него опции
+        driver.manage().window().maximize();//разворачиваем окно на весь экран
+        driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);// ожидание 10 секунд
     }
 
-    protected void tearDown() {
+    @AfterEach
+    void tearDown() {
         driver.quit();
-    }
+    }//закрытие драйвера
 }

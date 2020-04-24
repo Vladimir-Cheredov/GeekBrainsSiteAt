@@ -1,14 +1,22 @@
 package ru.geekbrains.lesson5_hw;
 
+import io.qameta.allure.Description;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.TestInstance;
+import org.junit.jupiter.api.parallel.Execution;
+import org.junit.jupiter.api.parallel.ExecutionMode;
 import org.openqa.selenium.support.PageFactory;
 import ru.geekbrains.lesson5_hw.base.BaseTest;
 
-@DisplayName("Проверка результатов поиска по ключевому слову Java")
-@TestInstance(TestInstance.Lifecycle.PER_CLASS)
+@Execution(ExecutionMode.CONCURRENT)
+@DisplayName("Пороверка поисковой выдачи")
 public class SearchTest extends BaseTest {
+
+    @Description(value = "1. Перейти на сайт https://geekbrains.ru/courses\n" +
+            "2. Нажать на кнопку Поиск\n" +
+            "3. В поле Поиск ввести текст: java")
+    @DisplayName("Пороверка выдачи поисковика на слово JAVA")
     @Test
     void SearchJavaTest() {
         driver.get("https://geekbrains.ru/career");

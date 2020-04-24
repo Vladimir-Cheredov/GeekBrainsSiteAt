@@ -1,5 +1,6 @@
 package ru.geekbrains.lesson5_hw;
 
+import io.qameta.allure.Step;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -22,6 +23,7 @@ public class LogInPage {
     @FindBy(css = "[class=\"btn btn-block btn-success\"]")
     private WebElement buttonEnter;
 
+    @Step("Авторизация почта: {email} пароль: {password}")
     public Page logIN(String email, String password) {
         inputEmail.click();
         inputEmail.sendKeys(email);

@@ -1,5 +1,6 @@
 package ru.geekbrains.lesson5_hw;
 
+import io.qameta.allure.Step;
 import org.junit.jupiter.api.Assertions;
 import org.openqa.selenium.By;
 import org.openqa.selenium.NotFoundException;
@@ -46,6 +47,7 @@ public class SearchPage {
     @FindBy(css = "input[class=\"search-panel__search-field\"]")
     private WebElement inputSearch;
 
+    @Step("Проверка выдачи элементов {nameTitle} не менее {Integer minNumber}")
     public SearchPage checkTitleNumberGreaterThanOrEqualTo(String nameTitle, Integer minNumber) {
         switch (nameTitle) {
             case "Профессии": {
@@ -98,7 +100,7 @@ public class SearchPage {
         }
         return this;
     }
-
+    @Step("Проверка текста: {nameCompany} ")
     public SearchPage checkCompanyIsPresent(String nameCompany) {
         WebElement element = driver.findElement(By.partialLinkText(nameCompany));
         Assertions.assertNotNull(element.getSize());

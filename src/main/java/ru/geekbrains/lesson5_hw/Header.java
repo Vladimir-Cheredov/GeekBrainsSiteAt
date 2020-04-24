@@ -1,5 +1,6 @@
 package ru.geekbrains.lesson5_hw;
 
+import io.qameta.allure.Step;
 import org.junit.jupiter.api.Assertions;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -17,6 +18,7 @@ public class Header {
     @FindBy(css = "[id=\"top-menu\"] [class=\"show-search-form\"] svg")
     private WebElement buttonSearchHeader;
 
+    @Step("Проверка корректности Header")
     public Page CheckHeaderPresent() {
         System.out.println("Запуск");
         Assertions.assertNotNull(buttonSearchHeader.getSize());

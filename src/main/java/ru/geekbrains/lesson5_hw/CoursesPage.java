@@ -1,5 +1,6 @@
 package ru.geekbrains.lesson5_hw;
 
+import io.qameta.allure.Step;
 import org.junit.jupiter.api.Assertions;
 import org.openqa.selenium.*;
 import org.openqa.selenium.support.FindBy;
@@ -80,6 +81,7 @@ public class CoursesPage {
     @FindBy(css = "[id=\"filter-13\"]")
     private WebElement checkBoxCyberSport;
 
+    @Step ("Выбор пункта {nameButton} в верхней строке")
     public Page clickButtonTopMenu(String nameButton) {
         switch (nameButton) {
             case "Профессии": {
@@ -102,6 +104,7 @@ public class CoursesPage {
         return PageFactory.initElements(driver, Page.class);
     }
 
+    @Step("Выбор пункта {nameButton} в checkBox")
     public CoursesPage checkBox(String nameButton) {
         switch (nameButton) {
             case "Бесплатные": {
@@ -164,6 +167,7 @@ public class CoursesPage {
         return this;
     }
 
+    @Step("Проверка присутствия на странице текста: {text} ")
     public CoursesPage checkTextIsPresent(String text) {
         WebElement element = driver.findElement(By.partialLinkText(text));
         Assertions.assertNotNull(element.getSize());
