@@ -1,6 +1,7 @@
-package ru.geekbrains.main.site.at.example.hamcrest.Object;
+package ru.geekbrains.lesson5.example.junit.hamcrest.Object;
 
-public class Dog extends Animal{
+
+public class Dog extends Animal {
     public Dog(String sound) {
         super(sound);
     }

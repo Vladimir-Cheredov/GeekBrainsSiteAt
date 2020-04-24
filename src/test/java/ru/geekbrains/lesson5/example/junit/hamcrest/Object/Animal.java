@@ -1,4 +1,4 @@
-package ru.geekbrains.main.site.at.example.hamcrest.Object;
+package ru.geekbrains.lesson5.example.junit.hamcrest.Object;
 
 public class Animal {
     protected String sound;

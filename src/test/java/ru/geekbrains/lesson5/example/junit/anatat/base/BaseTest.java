@@ -1,4 +1,4 @@
-package ru.geekbrains.main.site.at.example.anatat.base;
+package ru.geekbrains.lesson5.example.junit.anatat.base;
 
 import org.junit.jupiter.api.Test;
 

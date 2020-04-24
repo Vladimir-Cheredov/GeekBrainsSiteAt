@@ -1,4 +1,4 @@
-package ru.geekbrains.main.site.at.example.assertion;
+package ru.geekbrains.lesson5.example.junit.assertion;
 
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;

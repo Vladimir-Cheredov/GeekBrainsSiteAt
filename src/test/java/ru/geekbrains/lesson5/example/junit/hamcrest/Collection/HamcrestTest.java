@@ -1,4 +1,4 @@
-package ru.geekbrains.main.site.at.example.hamcrest.Collection;
+package ru.geekbrains.lesson5.example.junit.hamcrest.Collection;
 
 import org.junit.jupiter.api.Test;
 

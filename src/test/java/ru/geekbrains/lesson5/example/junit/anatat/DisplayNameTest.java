@@ -1,4 +1,4 @@
-package ru.geekbrains.main.site.at.example.anatat;
+package ru.geekbrains.lesson5.example.junit.anatat;
 
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.DisplayName;

@@ -1,4 +1,4 @@
-package ru.geekbrains.main.site.at.example.hamcrest.Number;
+package ru.geekbrains.lesson5.example.junit.hamcrest.Number;
 import org.junit.jupiter.api.Test;
 
 import static org.hamcrest.MatcherAssert.assertThat;

@@ -1,7 +1,7 @@
-package ru.geekbrains.main.site.at.example.anatat;
+package ru.geekbrains.lesson5.example.junit.anatat;
 
 import org.junit.jupiter.api.*;
-import ru.geekbrains.main.site.at.example.anatat.base.BaseTest;
+import ru.geekbrains.lesson5.example.junit.anatat.base.BaseTest;
 
 public class BigTest extends BaseTest {
     @BeforeAll
